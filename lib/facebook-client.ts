@@ -16,6 +16,7 @@ export async function sendFacebookEvent(eventData: ClientEventData) {
 
     return await response.json();
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error("Error sending Facebook event:", error);
     throw error;
   }
@@ -33,6 +34,7 @@ export function trackViewContent() {
   };
 
   sendFacebookEvent(eventData).catch((error) => {
+    // eslint-disable-next-line no-console
     console.error("ViewContent tracking failed:", error);
   });
 }
@@ -49,6 +51,7 @@ export function trackInitiateCheckout() {
   };
 
   sendFacebookEvent(eventData).catch((error) => {
+    // eslint-disable-next-line no-console
     console.error("InitiateCheckout tracking failed:", error);
   });
 }

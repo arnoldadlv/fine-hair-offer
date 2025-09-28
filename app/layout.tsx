@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <head>
-        <script src="https://sdk.whop.com/v2/whop.js" async />
+        <script async src="https://sdk.whop.com/v2/whop.js" />
       </head>
       <body
         className={clsx(

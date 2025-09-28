@@ -1,10 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { WhopCheckoutEmbed } from "@whop/checkout/react";
+
 import { Button } from "@heroui/button";
-import { title, subtitle } from "@/components/primitives";
+import { WhopCheckoutEmbed } from "@whop/checkout/react";
 import { ShieldCheck } from "lucide-react";
+
+import { title, subtitle } from "@/components/primitives";
+
 import { trackInitiateCheckout } from "@/lib/facebook-client";
 
 export function WhopCheckoutButton() {
@@ -21,10 +24,10 @@ export function WhopCheckoutButton() {
           100% Risk-Free Investment
         </span>
         <span className={subtitle()}>
-          If this guide doesn't transform your fine hair routine and give you
-          the volume you've been looking for, I'll refund every penny. No
+          If this guide doesn&apos;t transform your fine hair routine and give you
+          the volume you&apos;ve been looking for, I&apos;ll refund every penny. No
           questions asked. You have 60 full days to try everything in the guide.
-          If you're not completely satisfied, just email me and get your money
+          If you&apos;re not completely satisfied, just email me and get your money
           back instantly. You risk absolutely nothing.
         </span>
         <ShieldCheck size={125} />
@@ -35,13 +38,13 @@ export function WhopCheckoutButton() {
   return (
     <div>
       <Button
+        className="mt-4 px-4 py-8 text-xl"
+        color="primary"
+        variant="shadow"
         onPress={() => {
           trackInitiateCheckout();
           setShowCheckout(true);
         }}
-        color="primary"
-        variant="shadow"
-        className="mt-4 px-4 py-8 text-xl"
       >
         Show Me The Exact Steps
       </Button>

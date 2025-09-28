@@ -25,6 +25,7 @@ export async function POST(request: NextRequest) {
       data: result,
     });
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error("Facebook Conversion API route error:", error);
 
     return NextResponse.json(

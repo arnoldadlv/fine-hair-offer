@@ -1,9 +1,10 @@
+import { createHash } from "crypto";
+
 import {
   FacebookConversionEvent,
   FacebookConversionPayload,
   ClientEventData,
 } from "@/types/facebook-conversion";
-import { createHash } from "crypto";
 
 export class FacebookConversionAPI {
   private pixelId: string;
@@ -19,7 +20,7 @@ export class FacebookConversionAPI {
   }
 
   private hashData(data: string): string {
-    return createHash('sha256').update(data.toLowerCase().trim()).digest('hex');
+    return createHash("sha256").update(data.toLowerCase().trim()).digest("hex");
   }
 
   createEventPayload(
@@ -44,31 +45,31 @@ export class FacebookConversionAPI {
     // Add customer information if provided (hash PII)
     if (eventData.customerInfo) {
       const { customerInfo } = eventData;
-      
+
       if (customerInfo.email) {
         event.user_data!.em = [this.hashData(customerInfo.email)];
       }
-      
+
       if (customerInfo.phone) {
         event.user_data!.ph = [this.hashData(customerInfo.phone)];
       }
-      
+
       if (customerInfo.firstName) {
         event.user_data!.fn = [this.hashData(customerInfo.firstName)];
       }
-      
+
       if (customerInfo.lastName) {
         event.user_data!.ln = [this.hashData(customerInfo.lastName)];
       }
-      
+
       if (customerInfo.city) {
         event.user_data!.ct = [this.hashData(customerInfo.city)];
       }
-      
+
       if (customerInfo.country) {
         event.user_data!.country = [this.hashData(customerInfo.country)];
       }
-      
+
       if (customerInfo.dateOfBirth) {
         event.user_data!.db = [this.hashData(customerInfo.dateOfBirth)];
       }
@@ -115,6 +116,7 @@ export class FacebookConversionAPI {
 
       return await response.json();
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error("Facebook Conversion API Error:", error);
       throw error;
     }

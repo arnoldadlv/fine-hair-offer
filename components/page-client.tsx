@@ -13,9 +13,5 @@ export default function PageClient({ children }: PageClientProps) {
     trackViewContent();
   }, []);
 
-  return (
-    <>
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }

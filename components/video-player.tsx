@@ -16,14 +16,14 @@ export default function VideoPlayer() {
   return (
     <div className="relative w-full max-w-4xl mx-auto aspect-square px-2 sm:px-0">
       <video
-        ref={videoRef}
         autoPlay
+        className="w-full h-full rounded-lg"
+        controls
         loop
         muted
         playsInline
-        controls
+        ref={videoRef}
         src="https://stvsvideos.blob.core.windows.net/videos/copy_E44A1F42-9107-4A1D-B097-77CF0A414A18.mov"
-        className="w-full h-full rounded-lg"
       />
 
       <button
