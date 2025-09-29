@@ -12,12 +12,13 @@ export default function Home() {
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
         <div className="inline-block max-w-xl text-center justify-center">
           <span className={title()}>
-            Stop Getting Asked &ldquo;Are You Going Bald?&rdquo; When You&apos;re Not
+            Can People See Your Scalp Through Your Hair?{" "}
           </span>
           <br />
           <span className={subtitle({})}>
-            Exact Shampoo Names, Precise Application Order, and the 3-Step
-            Blow-Dry Technique That Gives Fine Hair All-Day Volume
+            The science-backed method that finally solves flat roots, visible
+            scalp, and breakage — so you can stop feeling insecure every time
+            you look in the mirror
           </span>
         </div>
         <div className="w-full max-w-5xl px-2 sm:px-4">
