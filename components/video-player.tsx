@@ -23,7 +23,7 @@ export default function VideoPlayer() {
         muted
         playsInline
         ref={videoRef}
-        src="https://stvsvideos.blob.core.windows.net/videos/copy_74A73A3C-9717-40D1-B849-45E6D7CA6FF5.mov"
+        src="https://stvsvideos.blob.core.windows.net/videos/copy_0D11E1D7-C0BD-4FC9-BB3F-EC8879A90957%20(1).mov"
       />
 
       <button
