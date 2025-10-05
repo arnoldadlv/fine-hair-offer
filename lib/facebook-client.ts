@@ -83,3 +83,34 @@ export function trackPurchase(purchaseData: {
 
   return sendFacebookEvent(eventData);
 }
+
+export function trackLead(leadData: {
+  name?: string;
+  email?: string;
+  phone?: string;
+  company?: string;
+}) {
+  const [firstName, ...lastNameParts] = (leadData.name || "").split(" ");
+  const lastName = lastNameParts.join(" ");
+
+  const eventData: ClientEventData = {
+    eventName: "Lead",
+    eventSourceUrl: window.location.href,
+    userAgent: navigator.userAgent,
+    customData: {
+      content_name: "Security Camera Audit",
+      content_category: "lead_form",
+    },
+    customerInfo: {
+      email: leadData.email,
+      firstName: firstName || undefined,
+      lastName: lastName || undefined,
+      phone: leadData.phone,
+    },
+  };
+
+  sendFacebookEvent(eventData).catch((error) => {
+    // eslint-disable-next-line no-console
+    console.error("Lead tracking failed:", error);
+  });
+}

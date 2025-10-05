@@ -35,7 +35,7 @@ export interface FacebookConversionResponse {
 }
 
 export interface ClientEventData {
-  eventName: "ViewContent" | "InitiateCheckout" | "Purchase";
+  eventName: "ViewContent" | "InitiateCheckout" | "Purchase" | "Lead";
   eventSourceUrl: string;
   userAgent: string;
   eventId?: string;
