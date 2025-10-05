@@ -43,7 +43,7 @@ export function WhopCheckoutButton() {
         variant="shadow"
         className="mt-4 px-4 py-8 text-xl"
       >
-        Show Me The Exact Steps
+        Show Me The Exact Steps ($17)
       </Button>
     </div>
   );

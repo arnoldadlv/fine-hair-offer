@@ -12,13 +12,12 @@ export default function Home() {
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
         <div className="inline-block max-w-xl text-center justify-center">
           <span className={title()}>
-            Can People See Your Scalp Through Your Hair?{" "}
+            How to Finally Have Hair That Looks Thick and Full
           </span>
           <br />
           <span className={subtitle({})}>
-            The science-backed method that finally solves flat roots, visible
-            scalp, and breakage — so you can stop feeling insecure every time
-            you look in the mirror
+            The complete system for fluffy roots, manageable oil, and strong
+            strands - so you can feel confident and beautiful
           </span>
         </div>
         <div className="w-full max-w-5xl px-2 sm:px-4">
